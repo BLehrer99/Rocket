@@ -44,11 +44,10 @@ void checkCase() {
       shutoff();
       break;
     case 9:
-      while (1);
+      shutoff();
       break;
     default:
-        message = "failure in checkCase";
-        phase = 9;
-        break;
+      message += "error: reached end of checkCase";
+      break;
   }
 }

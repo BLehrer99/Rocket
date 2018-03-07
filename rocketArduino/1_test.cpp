@@ -2,11 +2,11 @@
 
 void test() {
   if (digitalRead(ABORTPIN) == HIGH) {
-    message = "aborted";
+    message += "aborted: abort switch";
     phase = 9;
     return;
   }
-  message = "testing systems";
+  message += "testing systems";
   countdownStart = millis();
 }
 

@@ -1,7 +1,10 @@
 #include "globals.h"
 
-void setup() {  
+void setup() {
+  Wire.begin();
+
   pinMode(ABORTPIN, INPUT);
+
   Thrust.attach(THRUSTPIN);
   RYaw.attach(RYAWPIN);
   RPitch.attach(RPITCHPIN);
@@ -11,10 +14,10 @@ void setup() {
   Legs.attach(LEGSPIN);
 }
 
-int mPrevMillis = 0;
+long prevMillis;
 void loop() {
-  if (millis() - mPrevMillis >= 1000 * DELTAT) {
-    mPrevMillis = millis();
+  if (millis() - prevMillis >= 1000 * DELTAT) {
+    prevMillis = millis();
     message = "";
     tTime = phase >= 2 ? (millis() - countdownStart) - (1000 * COUNTLENGTH) : -1000000;
     readTelemetry();

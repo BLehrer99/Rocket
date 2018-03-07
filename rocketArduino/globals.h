@@ -3,9 +3,13 @@
 
 #include "Arduino.h"
 
+#include <Wire.h>
+
 #include <SFE_BMP180.h>
 #include <LSM303.h>
 #include <L3G.h>
+
+#include <SPI.h>
 
 #include <SD.h>
 
@@ -25,6 +29,12 @@
 
 #define SERVORANGE 180
 
+extern LSM303 compass;
+extern L3G gyro;
+extern SFE_BMP180 pressure;
+
+extern File myFile;
+
 extern int phase; //phase of flight
 extern String message; //important message to be written to sd card
 
@@ -34,19 +44,24 @@ extern int tTime;
 class Telemetry {
   public:
     void magRead();
+    double getPressure();
     void aglRead();
     void accentRateRead();
-    void pitchRead();
-    void yawRead();
-    void rollRead();
+    void gyroRead();
 
-    int mag;
-    int agl;
-    int prevAgl[3];
-    int accentRate;
-    int pitch;
-    int yaw;
-    int roll;
+    float mag;
+    float agl;
+    float prevAgl;
+    float accentRate;
+    float pitch;
+    float yaw;
+    float roll;
+
+    double qfe;
+
+  private:
+    unsigned long prevAltMicros = 0;
+    unsigned long prevGyroMicros = 0;
 };
 
 extern Telemetry telemetry;

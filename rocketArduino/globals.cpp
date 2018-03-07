@@ -24,6 +24,8 @@ int tTime;
 Telemetry telemetry;
 Servos servos;
 
+File myFile;
+
 Servo Thrust;
 Servo RYaw;
 Servo RPitch;
@@ -31,3 +33,7 @@ Servo RollComp;
 Servo LaunchPitch;
 Servo IgnitionSwitch;
 Servo Legs;
+
+LSM303 compass;
+L3G gyro;
+SFE_BMP180 pressure;
