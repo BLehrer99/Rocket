@@ -1,32 +1,23 @@
 #include "globals.h"
 
-int phase = 0;
-/*
-   phases
-   0: startup, calibration
-   1: control surface test
-   2: countdown
-   3: ignition
-   4: accent
-   5: peak
-   6: decent
-   7: landing
-   8: shutoff
-   9: powered off
-*/
-
-
-String message; //stores important info to write to sd card
-
-void setup() {
+void setup() {  
+  pinMode(ABORTPIN, INPUT);
+  Thrust.attach(THRUSTPIN);
+  RYaw.attach(RYAWPIN);
+  RPitch.attach(RPITCHPIN);
+  RollComp.attach(ROLLCOMPPIN);
+  LaunchPitch.attach(LAUNCHPITCHPIN);
+  IgnitionSwitch.attach(IGNITIONSWITCHPIN);
 }
 
 int mPrevMillis = 0;
 void loop() {
-  if (millis() - mPrevMillis >= 10) {
+  if (millis() - mPrevMillis >= 1000 * DELTAT) {
+    mPrevMillis = millis();
     message = "";
+    tTime = phase >= 2 ? (millis() - countdownStart) - (1000 * COUNTLENGTH) : -1000000;
+    readTelemetry();
     checkCase();
-    updateControls();
     writeSD();
   }
 }
