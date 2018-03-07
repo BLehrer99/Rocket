@@ -21,6 +21,8 @@
 #define ROLLCOMPPIN 6
 #define LAUNCHPITCHPIN 7
 #define IGNITIONSWITCHPIN 8
+#define LEGSPIN 8
+
 #define SERVORANGE 180
 
 extern int phase; //phase of flight
@@ -57,6 +59,7 @@ class Servos {
     void setRollComp(int);
     void setLaunchPitch(int);
     void setIgnitionSwitch(int);
+    void setLegs(int);
 
     int thrust;
     int rYaw;
@@ -64,6 +67,7 @@ class Servos {
     int rollComp;
     int launchPitch;
     int ignitionSwitch;
+    int legs;
 };
 
 extern Servos servos;
@@ -89,5 +93,6 @@ extern Servo RPitch;
 extern Servo RollComp;
 extern Servo LaunchPitch;
 extern Servo IgnitionSwitch;
+extern Servo Legs;
 
 #endif

@@ -30,3 +30,4 @@ Servo RPitch;
 Servo RollComp;
 Servo LaunchPitch;
 Servo IgnitionSwitch;
+Servo Legs;

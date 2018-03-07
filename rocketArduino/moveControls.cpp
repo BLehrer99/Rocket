@@ -29,3 +29,7 @@ void Servos::setIgnitionSwitch(int val){
   ignitionSwitch = val;
   IgnitionSwitch.write(ignitionSwitch);
 }
+void Servos::setLegs(int val){
+  legs = val;
+  Legs.write(legs);
+}

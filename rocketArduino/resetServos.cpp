@@ -7,4 +7,5 @@ void resetServos(){
   servos.setRollComp(SERVORANGE / 2);
   servos.setLaunchPitch(SERVORANGE / 2);
   servos.setIgnitionSwitch(0);
+  servos.setLegs(0);
 }

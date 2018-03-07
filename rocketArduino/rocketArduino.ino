@@ -8,6 +8,7 @@ void setup() {
   RollComp.attach(ROLLCOMPPIN);
   LaunchPitch.attach(LAUNCHPITCHPIN);
   IgnitionSwitch.attach(IGNITIONSWITCHPIN);
+  Legs.attach(LEGSPIN);
 }
 
 int mPrevMillis = 0;
