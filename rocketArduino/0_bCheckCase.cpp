@@ -7,7 +7,7 @@
    2: countdown
    3: ignition
    4: accent
-   5: peak
+   5: apogee
    6: decent
    7: landing
    8: shutoff
@@ -32,7 +32,7 @@ void checkCase() {
       accent();
       break;
     case 5:
-      peak();
+      apogee();
       break;
     case 6:
       decent();
@@ -47,7 +47,7 @@ void checkCase() {
       shutoff();
       break;
     default:
-      message += "error: reached end of checkCase";
+      message += "error: reached end of checkCase, ";
       break;
   }
 }

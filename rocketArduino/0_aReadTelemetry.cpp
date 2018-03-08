@@ -3,7 +3,9 @@
 void readTelemetry() {
   telemetry.magRead();
   telemetry.aglRead();
+  float prevAccentRate = telemetry.accentRate;
   telemetry.accentRateRead();
+  telemetry.accelerationRead(prevAccentRate);
   telemetry.gyroRead();
 }
 
@@ -20,9 +22,13 @@ void Telemetry::aglRead() {
 }
 
 void Telemetry::accentRateRead() {
-  float samplesPerSecond = 1.0 / (micros() - prevAltMicros);
+  accentSamplesPerSecond = 1.0 / (micros() - prevAltMicros);
   prevAltMicros = micros();
-  accentRate = (agl - prevAgl) * samplesPerSecond;
+  accentRate = (agl - prevAgl) * accentSamplesPerSecond;
+}
+
+void Telemetry::accelerationRead(float prevAccentRate) {
+  acceleration = (accentRate - prevAccentRate) / accentSamplesPerSecond;
 }
 
 void Telemetry::gyroRead() {
@@ -30,12 +36,12 @@ void Telemetry::gyroRead() {
   float samplesPerSecond = 1.0 / (micros() - prevGyroMicros);
   prevGyroMicros = micros();
 
-  float pitchRate = (float)gyro.g.x;
-  float deltaPitch = pitchRate * samplesPerSecond;
-  float yawRate = (float)gyro.g.y;
+  pitchRate = (float)gyro.g.x;
+  yawRate = (float)gyro.g.y;
+  rollRate = (float)gyro.g.z;
 
+  float deltaPitch = pitchRate * samplesPerSecond;
   float deltaYaw = yawRate * samplesPerSecond;
-  float rollRate = (float)gyro.g.z;
   float deltaRoll = rollRate * samplesPerSecond;
 
   pitch = (int)(pitch + deltaPitch) % 360;
@@ -58,21 +64,21 @@ double Telemetry::getPressure() {
         if (status != 0) {
           return (P);
         } else {
-          message += "error: retrieving pressure measurement";
+          message += "error: retrieving pressure measurement, ";
           return -9999;
         }
       } else {
-        message += "error: starting pressure measurement";
+        message += "error: starting pressure measurement, ";
         return -9999;
       }
     } else {
-      message += "error: retrieving temperature measurement";
+      message += "error: retrieving temperature measurement, ";
       return -9999;
     }
   } else {
-    message += "error: starting temperature measurement";
+    message += "error: starting temperature measurement, ";
     return -9999;
   }
-  message += "error: reached end of getPressure";
+  message += "error: reached end of getPressure, ";
   return -9999;
 }

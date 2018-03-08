@@ -18,16 +18,21 @@
 #define DELTAT 0.01
 #define COUNTLENGTH 3
 
-#define ABORTPIN 22
+#define ABORTPIN 48
+#define FAIRINGPIN 49
+
 #define THRUSTPIN 2
 #define RYAWPIN 3
 #define RPITCHPIN 5
+//skip 4, sd
 #define ROLLCOMPPIN 6
 #define LAUNCHPITCHPIN 7
 #define IGNITIONSWITCHPIN 8
 #define LEGSPIN 8
 
 #define SERVORANGE 180
+
+#define ENGINEDELAY 4000 //ms
 
 extern LSM303 compass;
 extern L3G gyro;
@@ -47,6 +52,7 @@ class Telemetry {
     double getPressure();
     void aglRead();
     void accentRateRead();
+    void accelerationRead(float prevAccentRate);
     void gyroRead();
 
     float mag;
@@ -56,12 +62,17 @@ class Telemetry {
     float pitch;
     float yaw;
     float roll;
+    float pitchRate;
+    float yawRate;
+    float rollRate;
+    float acceleration;
 
     double qfe;
 
   private:
     unsigned long prevAltMicros = 0;
     unsigned long prevGyroMicros = 0;
+    int accentSamplesPerSecond;
 };
 
 extern Telemetry telemetry;
@@ -96,7 +107,7 @@ void test();
 void countdown();
 void ignition();
 void accent();
-void peak();
+void apogee();
 void decent();
 void landing();
 void shutoff();

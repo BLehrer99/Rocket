@@ -13,7 +13,7 @@ void setupCompass() {
 
 int setupGyro() {
   if (!gyro.init()) {
-    message += "aborted: failed to detect gyro";
+    message += "aborted: failed to detect gyro, ";
     phase = 9;
     return 0;
   }
@@ -27,13 +27,13 @@ int setupGyro() {
 
 int setupPressure() {
   if (!pressure.begin()) {
-    message += "aborted: failed to setup pressure";
+    message += "aborted: failed to setup pressure, ";
     phase = 9;
     return 0;
   }
   telemetry.qfe = telemetry.getPressure();
   if (telemetry.qfe == -9999) {
-    message += "aborted: failed to setup get pressure";
+    message += "aborted: failed to setup get pressure, ";
     phase = 9;
     return 0;
   }
@@ -42,7 +42,7 @@ int setupPressure() {
 
 void startup() {
   if (digitalRead(ABORTPIN) == HIGH) {
-    message += "aborted: abort switch";
+    message += "aborted: abort switch, ";
     phase = 9;
     return;
   }
@@ -59,6 +59,6 @@ void startup() {
   if (!setupPressure())
     return;
 
-  message += "startup initiated: calibrating";
+  message += "startup initiated: calibrating, ";
   ++phase;
 }
