@@ -5,9 +5,11 @@ void resetServos() {
   servos.setRPitch(SERVORANGE / 2);
   servos.setRYaw(SERVORANGE / 2);
   servos.setRollComp(SERVORANGE / 2);
-  servos.setLaunchPitch(SERVORANGE / 2);
-  servos.setIgnitionSwitch(0);
   if (phase < 7)
-    servos.setLegs(0);
+    for (int i = 0; i < 4; ++i) {
+      servos.setLegFin(i, 30);
+
+    }
+  servos.setIgnitionSwitch(0);
   message += "reseting servos, ";
 }

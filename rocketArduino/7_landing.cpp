@@ -7,7 +7,9 @@ void landing() {
   if (!landingStarted) {
     landingStarted = true;
     message += "landing legs deploy, ";
-    //servos.setLegs(leg down angle);
+    for (int i = 0; i < 4; ++i) {
+      servos.setLegFin(i, 100);
+    }
   }
   //landing routine************************
   if (telemetry.agl <= 1) {

@@ -2,7 +2,7 @@
 
 void shutoff() {
   resetServos();
-  
+
   myFile.close();
 }
 

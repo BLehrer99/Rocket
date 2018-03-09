@@ -9,9 +9,11 @@ void setup() {
   RYaw.attach(RYAWPIN);
   RPitch.attach(RPITCHPIN);
   RollComp.attach(ROLLCOMPPIN);
-  LaunchPitch.attach(LAUNCHPITCHPIN);
   IgnitionSwitch.attach(IGNITIONSWITCHPIN);
-  Legs.attach(LEGSPIN);
+  LegFin0.attach(LEGS0PIN);
+  LegFin1.attach(LEGS1PIN);
+  LegFin2.attach(LEGS2PIN);
+  LegFin3.attach(LEGS3PIN);
 }
 
 long prevMillis;

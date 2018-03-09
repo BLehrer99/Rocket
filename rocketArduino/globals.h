@@ -26,9 +26,11 @@
 #define RPITCHPIN 5
 //skip 4, sd
 #define ROLLCOMPPIN 6
-#define LAUNCHPITCHPIN 7
-#define IGNITIONSWITCHPIN 8
-#define LEGSPIN 8
+#define IGNITIONSWITCHPIN 7
+#define LEGS0PIN 8
+#define LEGS1PIN 9
+#define LEGS2PIN 10
+#define LEGS3PIN 11
 
 #define SERVORANGE 180
 
@@ -83,9 +85,8 @@ class Servos {
     void setRYaw(int);
     void setRPitch(int);
     void setRollComp(int);
-    void setLaunchPitch(int);
     void setIgnitionSwitch(int);
-    void setLegs(int);
+    void setLegFin(int, int);
 
     int thrust;
     int rYaw;
@@ -93,7 +94,7 @@ class Servos {
     int rollComp;
     int launchPitch;
     int ignitionSwitch;
-    int legs;
+    int legs[4];
 };
 
 extern Servos servos;
@@ -117,8 +118,10 @@ extern Servo Thrust;
 extern Servo RYaw;
 extern Servo RPitch;
 extern Servo RollComp;
-extern Servo LaunchPitch;
 extern Servo IgnitionSwitch;
-extern Servo Legs;
+extern Servo LegFin0;
+extern Servo LegFin1;
+extern Servo LegFin2;
+extern Servo LegFin3;
 
 #endif

@@ -30,9 +30,11 @@ Servo Thrust;
 Servo RYaw;
 Servo RPitch;
 Servo RollComp;
-Servo LaunchPitch;
 Servo IgnitionSwitch;
-Servo Legs;
+Servo LegFin0;
+Servo LegFin1;
+Servo LegFin2;
+Servo LegFin3;
 
 LSM303 compass;
 L3G gyro;

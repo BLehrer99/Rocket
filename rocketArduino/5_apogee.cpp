@@ -9,6 +9,10 @@ void apogee() {
     fairingSep = true;
     message += "fairing jettison confirmed, ";
   }
+  for (int i = 0; i < 4; ++i) {
+    message += "legFins stowed";
+    servos.setLegFin(0, 0);
+  }
   //stow accent pitch fin
   ++phase;
 }

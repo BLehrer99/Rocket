@@ -22,7 +22,7 @@ void Telemetry::aglRead() {
 }
 
 void Telemetry::accentRateRead() {
-  accentSamplesPerSecond = 1.0 / (micros() - prevAltMicros);
+  accentSamplesPerSecond = 1000000.0 / float(micros() - prevAltMicros);
   prevAltMicros = micros();
   accentRate = (agl - prevAgl) * accentSamplesPerSecond;
 }
@@ -33,20 +33,20 @@ void Telemetry::accelerationRead(float prevAccentRate) {
 
 void Telemetry::gyroRead() {
   gyro.read();
-  float samplesPerSecond = 1.0 / (micros() - prevGyroMicros);
+  float samplesPerSecond = 1000000.0 / float(micros() - prevGyroMicros);
   prevGyroMicros = micros();
 
-  pitchRate = (float)gyro.g.x;
-  yawRate = (float)gyro.g.y;
-  rollRate = (float)gyro.g.z;
+  pitchRate = float(gyro.g.x);
+  yawRate = float(gyro.g.y);
+  rollRate = float(gyro.g.z);
 
   float deltaPitch = pitchRate * samplesPerSecond;
   float deltaYaw = yawRate * samplesPerSecond;
   float deltaRoll = rollRate * samplesPerSecond;
 
-  pitch = (int)(pitch + deltaPitch) % 360;
-  yaw = (int)(yaw + deltaYaw) % 360;
-  roll = (int)(roll + deltaRoll) % 360;
+  pitch = int(pitch + deltaPitch) % 360;
+  yaw = int(yaw + deltaYaw) % 360;
+  roll = int(roll + deltaRoll) % 360;
 }
 
 double Telemetry::getPressure() {
