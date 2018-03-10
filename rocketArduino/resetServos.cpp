@@ -1,6 +1,7 @@
 #include "globals.h"
 
 void resetServos() {
+  digitalWrite(IGNITIONPIN, HIGH);
   servos.setThrust(0);
   servos.setRPitch(SERVORANGE / 2);
   servos.setRYaw(SERVORANGE / 2);
@@ -10,6 +11,5 @@ void resetServos() {
       servos.setLegFin(i, 30);
 
     }
-  servos.setIgnitionSwitch(0);
   message += "reseting servos, ";
 }

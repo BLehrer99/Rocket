@@ -31,6 +31,27 @@ int setupPressure() {
     phase = 9;
     return 0;
   }
+  char status = pressure.startTemperature();
+  if (status == 0) {
+    message += "aborted: failed to start temperature, ";
+    phase = 9;
+    return 0;
+  }
+  delay(status);
+  status = pressure.getTemperature(telemetry.temp);
+  if (status == 0) {
+    message += "aborted: failed to get temperature, ";
+    phase = 9;
+    return 0;
+  }
+  delay(status);
+  status = pressure.startPressure(3);
+  if (status == 0) {
+    message += "aborted: failed to set start pressure, ";
+    phase = 9;
+    return 0;
+  }
+  delay(status);
   telemetry.qfe = telemetry.getPressure();
   if (telemetry.qfe == -9999) {
     message += "aborted: failed to setup get pressure, ";
@@ -41,15 +62,14 @@ int setupPressure() {
 }
 
 void startup() {
+  myFile = SD.open("log.txt", FILE_WRITE);
+  resetServos();
+
   if (digitalRead(ABORTPIN) == HIGH) {
     message += "aborted: abort switch, ";
     phase = 9;
     return;
   }
-  
-  myFile = SD.open("log.txt", FILE_WRITE);
-  
-  resetServos();
 
   setupCompass();
 

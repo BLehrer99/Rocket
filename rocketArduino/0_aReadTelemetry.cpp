@@ -51,34 +51,12 @@ void Telemetry::gyroRead() {
 
 double Telemetry::getPressure() {
   char status;
-  double T, P;
-  status = pressure.startTemperature();
+  double P;
+  status = pressure.getPressure(P, temp);
   if (status != 0) {
-    delay(status);
-    status = pressure.getTemperature(T);
-    if (status != 0) {
-      status = pressure.startPressure(3);
-      if (status != 0) {
-        delay(status);
-        status = pressure.getPressure(P, T);
-        if (status != 0) {
-          return (P);
-        } else {
-          message += "error: retrieving pressure measurement, ";
-          return -9999;
-        }
-      } else {
-        message += "error: starting pressure measurement, ";
-        return -9999;
-      }
-    } else {
-      message += "error: retrieving temperature measurement, ";
-      return -9999;
-    }
+    return (P);
   } else {
-    message += "error: starting temperature measurement, ";
+    message += "error: retrieving pressure measurement, ";
     return -9999;
   }
-  message += "error: reached end of getPressure, ";
-  return -9999;
 }

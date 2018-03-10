@@ -20,17 +20,32 @@
 
 #define ABORTPIN 48
 #define FAIRINGPIN 49
+#define IGNITIONPIN 50
 
 #define THRUSTPIN 2
 #define RYAWPIN 3
 #define RPITCHPIN 5
 //skip 4, sd
-#define ROLLCOMPPIN 6
-#define IGNITIONSWITCHPIN 7
-#define LEGS0PIN 8
-#define LEGS1PIN 9
-#define LEGS2PIN 10
-#define LEGS3PIN 11
+#define ROLLCOMP0PIN 6
+#define ROLLCOMP1PIN 7
+#define ROLLCOMP2PIN 8
+#define ROLLCOMP3PIN 9
+#define LEGS0PIN 10
+#define LEGS1PIN 11
+#define LEGS2PIN 12
+#define LEGS3PIN 13
+
+#define RYAWTRIM 0
+#define RPITCHTRIM 0
+#define THRUSTTRIM 0
+#define ROLLCOMP0TRIM 0
+#define ROLLCOMP1TRIM 0
+#define ROLLCOMP2TRIM 0
+#define ROLLCOMP3TRIM 0
+#define LEGS0TRIM 0
+#define LEGS1TRIM 0
+#define LEGS2TRIM 0
+#define LEGS3TRIM 0
 
 #define SERVORANGE 180
 
@@ -70,6 +85,7 @@ class Telemetry {
     float acceleration;
 
     double qfe;
+    double temp;
 
   private:
     unsigned long prevAltMicros = 0;
@@ -85,7 +101,6 @@ class Servos {
     void setRYaw(int);
     void setRPitch(int);
     void setRollComp(int);
-    void setIgnitionSwitch(int);
     void setLegFin(int, int);
 
     int thrust;
@@ -93,7 +108,6 @@ class Servos {
     int rPitch;
     int rollComp;
     int launchPitch;
-    int ignitionSwitch;
     int legs[4];
 };
 
@@ -117,8 +131,10 @@ void resetServos();
 extern Servo Thrust;
 extern Servo RYaw;
 extern Servo RPitch;
-extern Servo RollComp;
-extern Servo IgnitionSwitch;
+extern Servo RollComp0;
+extern Servo RollComp1;
+extern Servo RollComp2;
+extern Servo RollComp3;
 extern Servo LegFin0;
 extern Servo LegFin1;
 extern Servo LegFin2;

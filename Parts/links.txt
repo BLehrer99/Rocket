@@ -1,0 +1,34 @@
+https://www.amazon.com/gp/product/B01HXDQ3O8/ref=ox_sc_act_title_1?smid=A1OB26G8TSLEZQ&psc=1
+https://www.amazon.com/gp/product/B06ZYR64VM/ref=ox_sc_act_title_2?smid=A646DVGSXYMNH&psc=1
+https://www.amazon.com/gp/product/B000ERG18O/ref=ox_sc_act_title_3?smid=ATVPDKIKX0DER&psc=1
+https://www.amazon.com/gp/product/B00LC96Z16/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1
+https://www.amazon.com/gp/product/B01MYQWBQ1/ref=ox_sc_act_title_1?smid=A1THAZDOWP300U&psc=1
+https://www.amazon.com/gp/product/B078Z9J29S/ref=ox_sc_act_title_6?smid=A36AZVMIXMN0IJ&psc=1
+https://www.amazon.com/gp/product/B06XKZ7QYR/ref=ox_sc_act_title_7?smid=A1THAZDOWP300U&psc=1
+https://www.amazon.com/gp/product/B001448GD4/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1
+https://www.amazon.com/gp/product/B010SCWGE2/ref=ox_sc_act_title_1?smid=A2EI6KAMUCDRJD&psc=1
+
+//x2 wood disks for pressure, 3 inch diameter big, 1.4 inch small
+//x4 model rocket fins for roll comp
+//x4 wood iso triangle landing legs, 2.12 inch base, 6.09 inch edge
+//x4 ^^ but out of steel for heat shield
+//x4 fiberglass cloth heat hinges
+//x3 per launch E12-4 engines
+//x3 per launch E12-4 igniters and plugs
+//pushrods
+//lots of servos
+//relay for ignition
+//x2 9 volt battery for ignition, series
+//switch for abort
+//30 inch body, 3 inch diameter
+//6 inch round fairing plus cone
+//ethernet/sd shield for data
+//1 gig micro sd card for data
+//lots of wiring
+//parachute for fairing
+//foam plug for fairing jettison, half marshmallow & connection stick
+//hinged body segment
+//lots of control horns and clevis's
+//engine mount x2 & engine box
+//hot glue
+//silicone, heat

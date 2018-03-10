@@ -3,6 +3,7 @@
 bool fairingSep = false;
 
 void apogee() {
+  delay(500);
   if (digitalRead(FAIRINGPIN) == HIGH) {
     message += "error: fairing not jettisoned, ";
   } else {
@@ -13,7 +14,6 @@ void apogee() {
     message += "legFins stowed";
     servos.setLegFin(0, 0);
   }
-  //stow accent pitch fin
   ++phase;
 }
 
