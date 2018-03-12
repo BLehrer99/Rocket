@@ -1,12 +1,17 @@
-https://www.amazon.com/gp/product/B01HXDQ3O8/ref=ox_sc_act_title_1?smid=A1OB26G8TSLEZQ&psc=1
-https://www.amazon.com/gp/product/B06ZYR64VM/ref=ox_sc_act_title_2?smid=A646DVGSXYMNH&psc=1
-https://www.amazon.com/gp/product/B000ERG18O/ref=ox_sc_act_title_3?smid=ATVPDKIKX0DER&psc=1
-https://www.amazon.com/gp/product/B00LC96Z16/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1
-https://www.amazon.com/gp/product/B01MYQWBQ1/ref=ox_sc_act_title_1?smid=A1THAZDOWP300U&psc=1
-https://www.amazon.com/gp/product/B078Z9J29S/ref=ox_sc_act_title_6?smid=A36AZVMIXMN0IJ&psc=1
-https://www.amazon.com/gp/product/B06XKZ7QYR/ref=ox_sc_act_title_7?smid=A1THAZDOWP300U&psc=1
-https://www.amazon.com/gp/product/B001448GD4/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1
-https://www.amazon.com/gp/product/B010SCWGE2/ref=ox_sc_act_title_1?smid=A2EI6KAMUCDRJD&psc=1
+AMAZON.com below
+//KNACRO GY-89 10DOF LSM303D + L3GD20 + BMP180 barometric pressure sensor module Three-axis gyroscope + triaxial accelerometer + three-axis magnetic field + pressure
+//Zeee 11.1V 30C 2200mAh Lipo RC Rechargeable Battery for RC Helicopter/Airplane/Car/Truck/Boat, RC Hobby
+//E-flite Power 15 Brushless Outrunner Motor 950Kv
+//E-flite Plastic Folding Propeller Blades 12 x 8
+//uxcell RC Remote Control Airplane Folding Prop Propeller Spinner D32xH28mm Black
+//EMAX Formula32 45A (Upgrand BLHeli_32) ESC 2-5S DSHOT 1200 MULTISHOT ONESHOT125 ONESHOT42 Electronic Speed Control for FPV Racing Drone Quadcopter by Crazepony
+//uxcell 3mm to 5mm Inner Dia Rotatable Universal Steering Shaft U Joint Coupler
+//Davis Instruments Chart Holder Tube (40 x 3-Inch)
+//OSOYOO DUE R3 32 Bit ARM Compatible Shield Module Board With USB Cable for Arduino
+//kuman K15 Ethernet Shield W5100 Micro-sd Card Slot for Arduino 2009 UNO Mega 1280 Mega 2560 Nano Duemilanove
+//SunFounder 2 Channel DC 5V Relay Module with Optocoupler Low Level Trigger Expansion Board for Arduino UNO R3 MEGA 2560 1280 DSP ARM PIC AVR STM32 Raspberry Pi
+
+--------------------
 
 //x2 wood disks for pressure, 3 inch diameter big, 1.4 inch small
 //x4 model rocket fins for roll comp
@@ -32,3 +37,4 @@ https://www.amazon.com/gp/product/B010SCWGE2/ref=ox_sc_act_title_1?smid=A2EI6KAM
 //engine mount x2 & engine box
 //hot glue
 //silicone, heat
+//coathanger, for pushrods
